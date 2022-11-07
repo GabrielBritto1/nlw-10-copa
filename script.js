@@ -35,7 +35,7 @@ document.querySelector('#cards').innerHTML =
         createGame('mexico', '13:00', 'poland') +
         createGame('france', '16:00', 'australia')) +
 
-    createCard('23/11', 'terça',
+    createCard('23/11', 'quarta',
         createGame('morocco', '07:00', 'croatia') +
         createGame('germany', '10:00', 'japan') +
         createGame('spain', '13:00', 'costa rica') +
@@ -47,19 +47,19 @@ document.querySelector('#cards').innerHTML =
         createGame('portugal', '13:00', 'ghana') +
         createGame('brazil', '16:00', 'serbia')) +
 
-    createCard('25/11', 'quinta',
+    createCard('25/11', 'sexta',
         createGame('wales', '07:00', 'ira') +
         createGame('qatar', '10:00', 'senegal') +
         createGame('netherlands', '13:00', 'ecuador') +
         createGame('england', '16:00', 'usa')) +
 
-    createCard('26/11', 'quinta',
+    createCard('26/11', 'sábado',
         createGame('tunisia', '07:00', 'australia') +
         createGame('poland', '10:00', 'saudi arabia') +
         createGame('france', '13:00', 'denmark') +
         createGame('argentina', '16:00', 'mexico')) +
 
-    createCard('27/11', 'quinta',
+    createCard('27/11', 'domingo',
         createGame('japan', '07:00', 'costa rica') +
         createGame('belgium', '10:00', 'morocco') +
         createGame('croatia', '13:00', 'canada') +
@@ -71,13 +71,13 @@ document.querySelector('#cards').innerHTML =
         createGame('brazil', '13:00', 'switzerland') +
         createGame('portugal', '16:00', 'uruguay')) +
 
-    createCard('29/11', 'quinta',
+    createCard('29/11', 'terça',
         createGame('ecuador', '12:00', 'senegal') +
         createGame('netherlands', '12:00', 'qatar') +
         createGame('ira', '16:00', 'usa') +
         createGame('wales', '16:00', 'england')) +
 
-    createCard('30/11', 'quinta',
+    createCard('30/11', 'quarta',
         createGame('tunisia', '12:00', 'france') +
         createGame('australia', '12:00', 'denmark') +
         createGame('poland', '16:00', 'argentina') +
