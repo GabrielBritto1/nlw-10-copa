@@ -26,7 +26,7 @@ O Calendário é um componente que simula o calendário da copa de 2022, onde é
 
 ## 🔖 Layout
 
-Você pode visualizar o layout do projeto através [DESSE LINK]().
+Você pode visualizar o layout do projeto através [DESSE LINK](https://gabrielbritto1.github.io/nlw-10-copa/).
 
 ## :memo: Licença
 
