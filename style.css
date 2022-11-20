@@ -80,10 +80,6 @@ details>summary {
     animation: appear .2s forwards;
 }
 
-input:checked~.card {
-    display: block;
-}
-
 .card h2 {
     display: flex;
     gap: 16px;
@@ -96,7 +92,6 @@ input:checked~.card {
 
     width: fit-content;
     margin: auto;
-    margin-bottom: 53px;
     color: var(--card-color-primary);
 }
 
@@ -116,6 +111,7 @@ input:checked~.card {
 }
 
 .card ul li {
+    margin-top: 25px;
     display: flex;
     align-items: center;
     justify-content: space-between;
