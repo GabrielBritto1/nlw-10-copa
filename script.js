@@ -1,22 +1,27 @@
 function createGame(player1, hour, player2) {
     return `
     <li>
-        <img class="bandeiras" src="./assets/${player1}.svg" title="${player1.toUpperCase()}" alt="Bandeira do ${player1}">
+        <img class="bandeiras" src="./assets/${player1}.svg" data-toggle="tooltip" data-placement="bottom" title="${player1.toUpperCase()}" alt="Bandeira do ${player1}">
         <strong>${hour}</strong>
-        <img class="bandeiras" src="./assets/${player2}.svg" title="${player2.toUpperCase()}" alt="Bandeira da ${player2}">
+        <img class="bandeiras" src="./assets/${player2}.svg" data-toggle="tooltip" data-placement="bottom" title="${player2.toUpperCase()}" alt="Bandeira da ${player2}">
     </li>
     `
 }
 
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
 
 let delay = -0.4;
 function createCard(date, day, games) {
     delay = delay + 0.4;
     return `
     <div class="card" style="animation-delay: ${delay}s">
-            <h2>${date} <span>${day}</span></h2>
-        <ul>
+    <ul>
+        <details>
+        <summary> <h2>${date} <span>${day}</span></h2> </summary> 
             ${games}
+        </details>
         </ul>
     </div>
     `
