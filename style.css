@@ -70,6 +70,10 @@ details>summary {
     transform: translate(0 0.818176);
 }
 
+.loser {
+    opacity: 0.1;
+}
+
 .card {
     padding: 32px 23px;
     text-align: center;

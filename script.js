@@ -1,9 +1,18 @@
-function createGame(player1, hour, player2) {
+function createGame(player1, hour, player2, loser = 0) {
+    let loser1 = "";
+    let loser2 = "";
+
+    if (loser == 1) {
+        loser1 = "loser";
+    } else if (loser == 2) {
+        loser2 = "loser";
+    }
+
     return `
     <li>
-        <img class="bandeiras" src="./assets/${player1}.svg" data-toggle="tooltip" data-placement="bottom" title="${player1.toUpperCase()}" alt="Bandeira do ${player1}">
+        <img class="bandeiras ${loser1}" src="./assets/${player1}.svg" data-toggle="tooltip" data-placement="bottom" title="${player1.toUpperCase()}" alt="Bandeira do ${player1}">
         <strong>${hour}</strong>
-        <img class="bandeiras" src="./assets/${player2}.svg" data-toggle="tooltip" data-placement="bottom" title="${player2.toUpperCase()}" alt="Bandeira da ${player2}">
+        <img class="bandeiras ${loser2}" src="./assets/${player2}.svg" data-toggle="tooltip" data-placement="bottom" title="${player2.toUpperCase()}" alt="Bandeira da ${player2}">
     </li>
     `
 }
@@ -29,7 +38,7 @@ function createCard(date, day, games) {
 
 document.querySelector('#cards').innerHTML =
     createCard('20/11', 'domingo',
-        createGame('qatar', '13:00', 'ecuador')) +
+        createGame('qatar', '13:00', 'ecuador', 1)) +
 
     createCard('21/11', 'segunda',
         createGame('england', '10:00', 'ira') +
