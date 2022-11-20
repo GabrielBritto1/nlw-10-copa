@@ -59,6 +59,11 @@ header {
     gap: 32px;
 }
 
+details>summary {
+    list-style: none;
+    cursor: pointer;
+}
+
 .bandeiras {
     width: 50px;
     height: 51px;
@@ -71,6 +76,12 @@ header {
     background: var(--card-bg-color);
     border-bottom: 2px solid var(--card-color-primary);
     border-radius: 6px;
+    opacity: 0;
+    animation: appear .2s forwards;
+}
+
+input:checked~.card {
+    display: block;
 }
 
 .card h2 {
@@ -133,11 +144,6 @@ header {
 .card ul li strong,
 .card ul li img {
     transition: transform 0.3s;
-}
-
-.card {
-    opacity: 0;
-    animation: appear .2s forwards;
 }
 
 /* It's creating an animation. */
