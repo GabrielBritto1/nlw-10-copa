@@ -8,17 +8,24 @@
     --card-title-border-color: #746615;
     --card-color-primary: #f7dd43;
     --card-bg-color: #1d1c19;
-    --bg: url(./assets/bg-yellow.svg);
+    --bg: url(./assets/bg-yellow.svg)
 }
 
-body.blue {
+.yellow-mode {
+    --card-title-border-color: #746615;
+    --card-color-primary: #f7dd43;
+    --card-bg-color: #1d1c19;
+    --bg: url(./assets/bg-yellow.svg)
+}
+
+.blue-mode {
     --card-title-border-color: #338af3;
     --card-color-primary: #f7dd43;
     --card-bg-color: #202024;
     --bg: url(./assets/bg-blue.svg);
 }
 
-body.green {
+.green-mode {
     --card-title-border-color: #047c3f;
     --card-color-primary: #f7dd43;
     --card-bg-color: #1a1f1b;
@@ -46,6 +53,61 @@ body * {
     margin: auto;
     padding-top: 52px;
     cursor: default;
+}
+
+nav {
+    display: flex;
+    justify-content: left;
+}
+
+#botao {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    padding: 10px 10px;
+    text-align: center;
+    background: var(--card-bg-color);
+    border-bottom: 2px solid var(--card-color-primary);
+    border-radius: 6px;
+}
+
+.btn1 {
+    text-transform: uppercase;
+    border: none;
+    background: none;
+    color: #e1e1e6;
+}
+
+.btn1:hover {
+    cursor: pointer;
+    color: #746615;
+    transform: translateY(-2.5px);
+}
+
+.btn2 {
+    text-transform: uppercase;
+    border: none;
+    background: none;
+    color: #e1e1e6;
+}
+
+.btn2:hover {
+    cursor: pointer;
+    color: #338af3;
+    transform: translateY(-2.5px);
+}
+
+.btn3 {
+    text-transform: uppercase;
+    border: none;
+    background: none;
+    color: #e1e1e6;
+}
+
+.btn3:hover {
+    cursor: pointer;
+    color: #047c3f;
+    transform: translateY(-2.5px);
 }
 
 header {

@@ -36,6 +36,27 @@ function createCard(date, day, games) {
     `
 }
 
+function yellowMode() {
+    var element = document.body;
+    var content = document.getElementById("YellowModetext");
+    element.className = "yellow-mode";
+    content.innerText = "Dark Mode is ON";
+}
+
+function blueMode() {
+    var element = document.body;
+    var content = document.getElementById("BlueModetext");
+    element.className = "blue-mode";
+    content.innerText = "Dark Mode is OFF";
+}
+
+function greenMode() {
+    var element = document.body;
+    var content = document.getElementById("GreenModetext");
+    element.className = "green-mode";
+    content.innerText = "Dark Mode is OFF";
+}
+
 document.querySelector('#cards').innerHTML =
     createCard('20/11', 'domingo',
         createGame('qatar', '13:00', 'ecuador', 1)) +
