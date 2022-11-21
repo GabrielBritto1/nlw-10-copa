@@ -140,6 +140,9 @@ details>summary {
     color: #e1e1e6;
     display: flex;
     font-size: 18px;
+    opacity: 0.4;
+    justify-content: center;
+    padding-top: 10px;
 }
 
 .card {

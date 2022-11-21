@@ -1,4 +1,4 @@
-function createGame(player1, hour, player2, loser = 0, scoreBoard) {
+function createGame(player1, hour, player2, loser = 0, scoreBoard1 = 0, scoreBoard2 = 0) {
     let loser1 = "";
     let loser2 = "";
 
@@ -12,16 +12,12 @@ function createGame(player1, hour, player2, loser = 0, scoreBoard) {
     <li>
         <div class="score">
             <img class="bandeiras ${loser1}" src="./assets/${player1}.svg" data-toggle="tooltip" data-placement="bottom" title="${player1.toUpperCase()}" alt="Bandeira do ${player1}">
-
-            <span>${scoreBoard}</span>
+            <span>${scoreBoard1}</span>
         </div>
-
             <strong>${hour}</strong>
-
         <div class="score">
                 <img class="bandeiras ${loser2}" src="./assets/${player2}.svg" data-toggle="tooltip" data-placement="bottom" title="${player2.toUpperCase()}" alt="Bandeira da ${player2}">
-
-            <span>${scoreBoard}</span>
+            <span>${scoreBoard2}</span>
         </div>
     </li>
     `
@@ -38,7 +34,7 @@ function createCard(date, day, games) {
     <div class="card" style="animation-delay: ${delay}s">
     <ul>
         <details>
-        <summary> <h2>${date} <span>${day}</span></h2> </summary> 
+        <summary> <h2>${date} <span>${day}</span></h2> </summary>
             ${games}
         </details>
         </ul>
@@ -69,11 +65,11 @@ function greenMode() {
 
 document.querySelector('#cards').innerHTML =
     createCard('20/11', 'domingo',
-        createGame('qatar', '13:00', 'ecuador', 1, 2, 2)) +
+        createGame('qatar', '00:00', 'ecuador', 1, 0, 2)) +
 
     createCard('21/11', 'segunda',
-        createGame('england', '10:00', 'ira', 2) +
-        createGame('senegal', '13:00', 'netherlands') + createGame('usa', '16:00', 'wales')) +
+        createGame('england', '00:00', 'ira', 2, 6, 2) +
+        createGame('senegal', '00:00', 'netherlands', 1, 0, 2) + createGame('usa', '00:00', 'wales', 0, 1, 1)) +
 
     createCard('22/11', 'terça',
         createGame('argentina', '07:00', 'saudi arabia') +
