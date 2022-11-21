@@ -5,10 +5,10 @@
 }
 
 :root {
-    --card-title-border-color: #746615;
+    --card-title-border-color: #338af3;
     --card-color-primary: #f7dd43;
-    --card-bg-color: #1d1c19;
-    --bg: url(./assets/bg-yellow.svg)
+    --card-bg-color: #202024;
+    --bg: url(./assets/bg-blue.svg);
 }
 
 .yellow-mode {
@@ -134,6 +134,12 @@ details>summary {
 
 .loser {
     opacity: 0.1;
+}
+
+.score span {
+    color: #e1e1e6;
+    display: flex;
+    font-size: 18px;
 }
 
 .card {

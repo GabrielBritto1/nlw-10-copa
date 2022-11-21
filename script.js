@@ -1,4 +1,4 @@
-function createGame(player1, hour, player2, loser = 0) {
+function createGame(player1, hour, player2, loser = 0, scoreBoard) {
     let loser1 = "";
     let loser2 = "";
 
@@ -10,9 +10,19 @@ function createGame(player1, hour, player2, loser = 0) {
 
     return `
     <li>
-        <img class="bandeiras ${loser1}" src="./assets/${player1}.svg" data-toggle="tooltip" data-placement="bottom" title="${player1.toUpperCase()}" alt="Bandeira do ${player1}">
-        <strong>${hour}</strong>
-        <img class="bandeiras ${loser2}" src="./assets/${player2}.svg" data-toggle="tooltip" data-placement="bottom" title="${player2.toUpperCase()}" alt="Bandeira da ${player2}">
+        <div class="score">
+            <img class="bandeiras ${loser1}" src="./assets/${player1}.svg" data-toggle="tooltip" data-placement="bottom" title="${player1.toUpperCase()}" alt="Bandeira do ${player1}">
+
+            <span>${scoreBoard}</span>
+        </div>
+
+            <strong>${hour}</strong>
+
+        <div class="score">
+                <img class="bandeiras ${loser2}" src="./assets/${player2}.svg" data-toggle="tooltip" data-placement="bottom" title="${player2.toUpperCase()}" alt="Bandeira da ${player2}">
+
+            <span>${scoreBoard}</span>
+        </div>
     </li>
     `
 }
@@ -59,10 +69,10 @@ function greenMode() {
 
 document.querySelector('#cards').innerHTML =
     createCard('20/11', 'domingo',
-        createGame('qatar', '13:00', 'ecuador', 1)) +
+        createGame('qatar', '13:00', 'ecuador', 1, 2, 2)) +
 
     createCard('21/11', 'segunda',
-        createGame('england', '10:00', 'ira') +
+        createGame('england', '10:00', 'ira', 2) +
         createGame('senegal', '13:00', 'netherlands') + createGame('usa', '16:00', 'wales')) +
 
     createCard('22/11', 'terça',
