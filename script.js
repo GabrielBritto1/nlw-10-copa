@@ -72,10 +72,10 @@ document.querySelector('#cards').innerHTML =
         createGame('senegal', '00:00', 'netherlands', 1, 0, 2) + createGame('usa', '00:00', 'wales', 0, 1, 1)) +
 
     createCard('22/11', 'terça',
-        createGame('argentina', '00:00', 'saudi arabia',1,1,2) +
-        createGame('denmark', '10:00', 'tunisia') +
-        createGame('mexico', '13:00', 'poland') +
-        createGame('france', '16:00', 'australia')) +
+        createGame('argentina', '00:00', 'saudi arabia', 1, 1, 2) +
+        createGame('denmark', '10:00', 'tunisia', 0, 0, 0) +
+        createGame('mexico', '13:00', 'poland', 0, 0, 0) +
+        createGame('france', '16:00', 'australia', 2, 4, 1)) +
 
     createCard('23/11', 'quarta',
         createGame('morocco', '07:00', 'croatia') +
