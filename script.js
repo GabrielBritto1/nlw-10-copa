@@ -1,3 +1,5 @@
+listCountries()
+
 function createGame(player1, hour, player2, loser = 0, scoreBoard1 = 0, scoreBoard2 = 0) {
     let loser1 = "";
     let loser2 = "";
@@ -136,3 +138,32 @@ document.querySelector('#cards').innerHTML =
         createGame('ghana', '12:00', 'uruguay') +
         createGame('serbia', '16:00', 'switzerland') +
         createGame('cameroon', '16:00', 'brazil'));
+
+
+function listCountries() {
+
+    // fetch('http://api.cup2022.ir/api/v1/team', {
+    //     method: "GET",
+    //     headers: [{ 'Content-Type': 'application/json' }, { 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzdiZjU0YjQ4NzA5MjMzZmQ3YjhkZTciLCJpYXQiOjE2NjkwNjgyMTEsImV4cCI6MTY2OTE1NDYxMX0.aBBuB6eeOaGyvdAj6UiATceAJolSx44CaH2QV1MU3QA' }]
+    // }).then(result => {
+    //     // do something with the result
+    //     console.log("Completed with result:", result);
+    // }).catch(err => {
+    //     // if any error occured, then catch it here
+    //     console.error(err);
+    // });
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "http://api.cup2022.ir/api/v1/team", true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.setRequestHeader('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzdiZjU0YjQ4NzA5MjMzZmQ3YjhkZTciLCJpYXQiOjE2NjkwNjgyMTEsImV4cCI6MTY2OTE1NDYxMX0.aBBuB6eeOaGyvdAj6UiATceAJolSx44CaH2QV1MU3QA');
+    xhr.Current.Response.Headers.Remove("Access-Control-Allow-Origin");
+    xhr.send(JSON.stringify({}));
+    xhr.onload = function () {
+        console.log("HELLO")
+        console.log(this.responseText);
+        var data = JSON.parse(this.responseText);
+        console.log(data);
+    }
+
+}
