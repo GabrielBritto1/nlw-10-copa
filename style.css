@@ -232,9 +232,26 @@ details>summary {
 }
 
 @media (min-width:700px) {
+
     #cards {
         max-width: 670px;
         flex-direction: row;
         flex-wrap: wrap;
     }
+
+}
+
+@media (max-width:500px) {
+
+    #botao {
+        display: none;
+    }
+
+    :root {
+        --card-title-border-color: #047c3f;
+        --card-color-primary: #f7dd43;
+        --card-bg-color: #1a1f1b;
+        --bg: url(./assets/bg-green.svg);
+    }
+
 }
