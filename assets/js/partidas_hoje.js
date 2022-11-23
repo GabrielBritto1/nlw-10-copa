@@ -16,11 +16,11 @@ $.when($.ajax("https://copa22.medeiro.tech/matches/today")).then(function (data)
 
         $("#container").append(
             montaPartida(
-                status, 
-                element.homeTeam.name, 
-                element.awayTeam.name, 
-                element.homeTeam.goals, 
-                element.awayTeam.goals, 
+                status,
+                element.homeTeam.name,
+                element.awayTeam.name,
+                element.homeTeam.goals,
+                element.awayTeam.goals,
                 montaData(element.date)
             )
         );

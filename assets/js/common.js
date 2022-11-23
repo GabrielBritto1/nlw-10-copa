@@ -8,13 +8,16 @@ $("#nav").html(`
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
+                    <a class="nav-link" href="./partidas_hoje.html">Partidas Hoje</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="./partidas.html">Partidas</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="./grupos.html">Grupos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./partidas.html">Partidas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./partidas_hoje.html">Partidas Hoje</a>
+                    <a class="nav-link" href="./acontecendo.html">Acontecendo</a>
                 </li>
             </ul>
         </div>
@@ -36,10 +39,10 @@ const translateFlag = {
     'France': 'Franca',
     'Germany': 'Alemanha',
     'Ghana': 'Gana',
-    'Iran': 'Ira',
-    'Japan': 'Japao',
+    'Iran': 'Irã',
+    'Japan': 'Japão',
     'Korea Republic': 'Coreia do Sul',
-    'Mexico': 'Mexico',
+    'Mexico': 'México',
     'Morocco': 'Marrocos',
     'Netherlands': 'Holanda',
     'Poland': 'Polonia',
@@ -49,7 +52,7 @@ const translateFlag = {
     'Senegal': 'Senegal',
     'Serbia': 'Servia',
     'Spain': 'Espanha',
-    'Switzerland': 'Suica',
+    'Switzerland': 'Suiça',
     'Tunisia': 'Tunisia',
     'Uruguay': 'Uruguai',
     'USA': 'EUA',

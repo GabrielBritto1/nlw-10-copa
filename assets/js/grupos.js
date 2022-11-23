@@ -11,10 +11,10 @@ $.when($.ajax("https://copa22.medeiro.tech/groups")).then(function (data) {
             const element2 = element.teams[index2];
 
             class_tr = ``
-            if(index2 == 0 || index2 == 1) {
+            if (index2 == 0 || index2 == 1) {
                 class_tr = `bg-success`
             }
-            
+
             times += ` 
                 <tr class="${class_tr}">
                     <td class="text-left"><img class="img" src="./assets/img/flags/${element2.alternateName.toLowerCase()}.svg" alt="Bandeira do ${element2.alternateName}" width="20px"></td>
