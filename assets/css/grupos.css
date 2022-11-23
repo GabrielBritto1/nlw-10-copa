@@ -4,7 +4,7 @@
 }
 
 body {
-    background-image: url(/assets/img/bg-green.svg);
+    background-image: url(./assets/img/bg-green.svg);
     background-color: #121214;
     background-repeat: no-repeat;
     background-position: top center;

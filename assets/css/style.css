@@ -8,28 +8,28 @@
     --card-title-border-color: #338af3;
     --card-color-primary: #f7dd43;
     --card-bg-color: #202024;
-    --bg: url(./assets/img/bg-blue.svg);
+    --bg: url(/assets/img/bg-blue.svg);
 }
 
 .yellow-mode {
     --card-title-border-color: #746615;
     --card-color-primary: #f7dd43;
     --card-bg-color: #1d1c19;
-    --bg: url(./assets/img/bg-yellow.svg)
+    --bg: url(/assets/img/bg-yellow.svg)
 }
 
 .blue-mode {
     --card-title-border-color: #338af3;
     --card-color-primary: #f7dd43;
     --card-bg-color: #202024;
-    --bg: url(./assets/img/bg-blue.svg);
+    --bg: url(/assets/img/bg-blue.svg);
 }
 
 .green-mode {
     --card-title-border-color: #047c3f;
     --card-color-primary: #f7dd43;
     --card-bg-color: #1a1f1b;
-    --bg: url(./assets/img/bg-green.svg);
+    --bg: url(/assets/img/bg-green.svg);
 }
 
 ul {
@@ -244,7 +244,7 @@ details>summary {
         --card-title-border-color: #047c3f;
         --card-color-primary: #f7dd43;
         --card-bg-color: #1a1f1b;
-        --bg: url(./assets/img/bg-green.svg);
+        --bg: url(/assets/img/bg-green.svg);
     }
 
 }
