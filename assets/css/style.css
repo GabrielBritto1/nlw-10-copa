@@ -55,13 +55,6 @@ body * {
     cursor: default;
 }
 
-nav {
-    display: flex;
-    justify-content: right;
-    font-size: 12px;
-    padding-right: 250px;
-}
-
 #botao {
     display: flex;
     gap: 20px;

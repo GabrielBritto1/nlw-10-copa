@@ -2,6 +2,7 @@
 $.when($.ajax("https://copa22.medeiro.tech/matches")).then(function (data) {
     let status = ``;
     let dia = ``;
+
     for (let index = 0; index < data.length; index++) {
         const element = data[index];
         status = ``;
