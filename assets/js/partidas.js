@@ -33,11 +33,9 @@ function carregaPartidas() {
 
                     <div class="card mb-3 text-center ${status}">
                         <div class="card-header">
-                        <img class="logoQatar" src="./assets/img/${element.homeTeam.name.toLowerCase()}.svg" alt="Bandeira do ${element.homeTeam.name}" width="20px">
-                            ${time1}: <span class="badge badge-light">${element.homeTeam.goals}</span> 
-                            x
-                        <img class="logoQatar" src="./assets/img/${element.awayTeam.name.toLowerCase()}.svg" alt="Bandeira do ${element.awayTeam.name}" width="20px">
-                            ${time2}: <span class="badge badge-light">${element.awayTeam.goals}</span>
+                            <img class="logoQatar" src="./assets/img/flags/${element.homeTeam.name.toLowerCase()}.svg" alt="Bandeira do ${element.homeTeam.name}" width="20px"> ${time1}: <span class="badge badge-light">${element.homeTeam.goals}</span> 
+                                x
+                            <img class="logoQatar" src="./assets/img/flags/${element.awayTeam.name.toLowerCase()}.svg" alt="Bandeira do ${element.awayTeam.name}" width="20px"> ${time2}: <span class="badge badge-light">${element.awayTeam.goals}</span>
                         </div>
                         <ul class="list-group list-group-flush">
                             ${myDay}/${myMonth}/${myYear} as ${myTime}:00

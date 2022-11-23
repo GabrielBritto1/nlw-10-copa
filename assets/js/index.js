@@ -11,12 +11,12 @@ function createGame(player1, hour, player2, loser = 0, scoreBoard1 = 0, scoreBoa
     return `
     <li>
         <div class="score">
-            <img class="bandeiras ${loser1}" src="./assets/img/${player1}.svg" data-toggle="tooltip" data-placement="bottom" title="${player1.toUpperCase()}" alt="Bandeira do ${player1}">
+            <img class="bandeiras ${loser1}" src="./assets/img/flags/${player1}.svg" data-toggle="tooltip" data-placement="bottom" title="${player1.toUpperCase()}" alt="Bandeira do ${player1}">
             <span>${scoreBoard1}</span>
         </div>
             <strong>${hour}</strong>
         <div class="score">
-                <img class="bandeiras ${loser2}" src="./assets/img/${player2}.svg" data-toggle="tooltip" data-placement="bottom" title="${player2.toUpperCase()}" alt="Bandeira da ${player2}">
+                <img class="bandeiras ${loser2}" src="./assets/img/flags/${player2}.svg" data-toggle="tooltip" data-placement="bottom" title="${player2.toUpperCase()}" alt="Bandeira da ${player2}">
             <span>${scoreBoard2}</span>
         </div>
     </li>
