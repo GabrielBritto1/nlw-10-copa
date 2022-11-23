@@ -11,12 +11,12 @@ function createGame(player1, hour, player2, loser = 0, scoreBoard1 = 0, scoreBoa
     return `
     <li>
         <div class="score">
-            <img class="bandeiras ${loser1}" src="./assets/${player1}.svg" data-toggle="tooltip" data-placement="bottom" title="${player1.toUpperCase()}" alt="Bandeira do ${player1}">
+            <img class="bandeiras ${loser1}" src="/assets/img/${player1}.svg" data-toggle="tooltip" data-placement="bottom" title="${player1.toUpperCase()}" alt="Bandeira do ${player1}">
             <span>${scoreBoard1}</span>
         </div>
             <strong>${hour}</strong>
         <div class="score">
-                <img class="bandeiras ${loser2}" src="./assets/${player2}.svg" data-toggle="tooltip" data-placement="bottom" title="${player2.toUpperCase()}" alt="Bandeira da ${player2}">
+                <img class="bandeiras ${loser2}" src="/assets/img/${player2}.svg" data-toggle="tooltip" data-placement="bottom" title="${player2.toUpperCase()}" alt="Bandeira da ${player2}">
             <span>${scoreBoard2}</span>
         </div>
     </li>
@@ -42,33 +42,12 @@ function createCard(date, day, games) {
     `
 }
 
-function yellowMode() {
-    var element = document.body;
-    var content = document.getElementById("YellowModetext");
-    element.className = "yellow-mode";
-    content.innerText = "Dark Mode is ON";
-}
-
-function blueMode() {
-    var element = document.body;
-    var content = document.getElementById("BlueModetext");
-    element.className = "blue-mode";
-    content.innerText = "Dark Mode is OFF";
-}
-
-function greenMode() {
-    var element = document.body;
-    var content = document.getElementById("GreenModetext");
-    element.className = "green-mode";
-    content.innerText = "Dark Mode is OFF";
-}
-
 document.querySelector('#cards').innerHTML =
     createCard('20/11', 'domingo',
         createGame('qatar', '00:00', 'ecuador', 1, 0, 2)) +
 
     createCard('21/11', 'segunda',
-        createGame('england', '00:00', 'ira', 2, 6, 2) +
+        createGame('england', '00:00', 'iran', 2, 6, 2) +
         createGame('senegal', '00:00', 'netherlands', 1, 0, 2) + createGame('usa', '00:00', 'wales', 0, 1, 1)) +
 
     createCard('22/11', 'terça',
@@ -85,12 +64,12 @@ document.querySelector('#cards').innerHTML =
 
     createCard('24/11', 'quinta',
         createGame('switzerland', '07:00', 'cameroon') +
-        createGame('uruguay', '10:00', 'south korea') +
+        createGame('uruguay', '10:00', 'korea republic') +
         createGame('portugal', '13:00', 'ghana') +
         createGame('brazil', '16:00', 'serbia')) +
 
     createCard('25/11', 'sexta',
-        createGame('wales', '07:00', 'ira') +
+        createGame('wales', '07:00', 'iran') +
         createGame('qatar', '10:00', 'senegal') +
         createGame('netherlands', '13:00', 'ecuador') +
         createGame('england', '16:00', 'usa')) +
@@ -109,7 +88,7 @@ document.querySelector('#cards').innerHTML =
 
     createCard('28/11', 'segunda',
         createGame('cameroon', '07:00', 'serbia') +
-        createGame('south korea', '10:00', 'ghana') +
+        createGame('korea republic', '10:00', 'ghana') +
         createGame('brazil', '13:00', 'switzerland') +
         createGame('portugal', '16:00', 'uruguay')) +
 
@@ -132,7 +111,29 @@ document.querySelector('#cards').innerHTML =
         createGame('costa rica', '16:00', 'germany')) +
 
     createCard('02/12', 'sexta',
-        createGame('south korea', '12:00', 'portugal') +
+        createGame('korea republic', '12:00', 'portugal') +
         createGame('ghana', '12:00', 'uruguay') +
         createGame('serbia', '16:00', 'switzerland') +
         createGame('cameroon', '16:00', 'brazil'));
+
+
+function yellowMode() {
+    var element = document.body;
+    var content = document.getElementById("YellowModetext");
+    element.className = "yellow-mode";
+    content.innerText = "Yellow Mode is ON";
+}
+
+function blueMode() {
+    var element = document.body;
+    var content = document.getElementById("BlueModetext");
+    element.className = "blue-mode";
+    content.innerText = "Blue Mode is OFF";
+}
+
+function greenMode() {
+    var element = document.body;
+    var content = document.getElementById("GreenModetext");
+    element.className = "green-mode";
+    content.innerText = "Green Mode is OFF";
+}
