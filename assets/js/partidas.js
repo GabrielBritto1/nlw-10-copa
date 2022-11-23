@@ -13,19 +13,19 @@ function carregaPartidas() {
 
             // condicionais para mudar a cor do background
             if (element.status == "completed") {
-                status = `bg-primary`;
+                status = `bg-success`;
             } else if (element.status == "in_progress") {
                 status = `bg-warning`;
             }
 
-            if(element.homeTeam){
+            if (element.homeTeam) {
                 $("#container").append(
                     montaPartida(
-                        status, 
-                        element.homeTeam.name, 
-                        element.awayTeam.name, 
-                        element.homeTeam.goals, 
-                        element.awayTeam.goals, 
+                        status,
+                        element.homeTeam.name,
+                        element.awayTeam.name,
+                        element.homeTeam.goals,
+                        element.awayTeam.goals,
                         montaData(element.date)
                     )
                 );

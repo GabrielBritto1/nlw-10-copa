@@ -9,7 +9,7 @@ $.when($.ajax("https://copa22.medeiro.tech/matches/today")).then(function (data)
         dia = ``;
 
         if (element.status == "completed") {
-            status = `bg-primary`;
+            status = `bg-success`;
         } else if (element.status == "in_progress") {
             status = `bg-warning`;
         }
