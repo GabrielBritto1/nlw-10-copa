@@ -6,15 +6,10 @@ function carregaPartidas() {
     // consulta ajax no endpoint
     $.when($.ajax("https://copa22.medeiro.tech/matches")).then(function (data) {
 
-        // inicializando as variáveis
-        let status = ``;
-        let dia = ``;
-
         // iterando o resultado obtido através da api
         for (let index = 0; index < data.length; index++) {
             const element = data[index];
-            status = ``;
-            dia = ``;
+            let status = ``;
 
             // condicionais para mudar a cor do background
             if (element.status == "completed") {
@@ -23,11 +18,6 @@ function carregaPartidas() {
                 status = `bg-warning`;
             }
 
-            // 2022-11-23T10:00:00.000Z
-
-            // [0]// 2022-11-23
-            // [1]// 10:00:00.000Z
-
             let myDate = element.date.split("T");
             let myYear = myDate[0].split("-")[0];
             let myMonth = myDate[0].split("-")[1];
@@ -35,14 +25,8 @@ function carregaPartidas() {
             let myTime = myDate[1].split(":")[0];
             myTime = parseInt(myTime) - 3;
 
-
-            let time1 = element.homeTeam.name;
-            let time2 = element.awayTeam.name;
-            // if (element.winner == time1) {
-            //     time1 = `${time1} ganhou`
-            // } else if (element.winner == time2) {
-            //     time2 = `${time2} ganhou`
-            // }
+            let time1 = translateFlag[element.homeTeam.name];
+            let time2 = translateFlag[element.awayTeam.name];
 
             $("#container").append(`
                 <div class="col-md-4">
