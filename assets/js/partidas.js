@@ -18,16 +18,18 @@ function carregaPartidas() {
                 status = `bg-warning`;
             }
 
-            $("#container").append(
-                montaPartida(
-                    status, 
-                    element.homeTeam.name, 
-                    element.awayTeam.name, 
-                    element.homeTeam.goals, 
-                    element.awayTeam.goals, 
-                    montaData(element.date)
-                )
-            );
+            if(element.homeTeam){
+                $("#container").append(
+                    montaPartida(
+                        status, 
+                        element.homeTeam.name, 
+                        element.awayTeam.name, 
+                        element.homeTeam.goals, 
+                        element.awayTeam.goals, 
+                        montaData(element.date)
+                    )
+                );
+            }
         }
     });
 }
