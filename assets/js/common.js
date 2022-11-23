@@ -55,3 +55,35 @@ const translateFlag = {
     'USA': 'EUA',
     'Wales': 'Gales',
 }
+
+function montaPartida(status, time1, time2, gols1, gols2, dataFormatada) {
+    return `
+        <div class="col-md-4">
+            <div class="card mb-3 text-center ${status}">
+                <div class="card-header">
+                    <img class="logoQatar" src="./assets/img/flags/${time1.toLowerCase()}.svg" alt="Bandeira do ${time1}" width="20px"> 
+                    ${translateFlag[time1]} 
+                    <span class="badge badge-light">${gols1}</span> 
+                    x
+                    <span class="badge badge-light">${gols2}</span> 
+                    ${translateFlag[time2]} 
+                    <img class="logoQatar" src="./assets/img/flags/${time2.toLowerCase()}.svg" alt="Bandeira do ${time2}" width="20px">
+                </div>
+                <ul class="list-group list-group-flush">
+                    ${dataFormatada}
+                </ul>
+            </div>
+        </div>
+        `
+}
+
+function montaData(date) {
+
+    let myDate = date.split("T");
+    let myYear = myDate[0].split("-")[0];
+    let myMonth = myDate[0].split("-")[1];
+    let myDay = myDate[0].split("-")[2];
+    let myTime = myDate[1].split(":")[0];
+    myTime = parseInt(myTime) - 3;
+    return `${myDay}/${myMonth}/${myYear} as ${myTime}:00`
+}
