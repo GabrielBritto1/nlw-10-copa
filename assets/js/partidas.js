@@ -2,6 +2,7 @@
 $.when($.ajax("https://copa22.medeiro.tech/matches")).then(function (data) {
     let status = ``;
     let dia = ``;
+    // let array = [];
     for (let index = 0; index < data.length; index++) {
         const element = data[index];
         status = ``;
@@ -19,6 +20,11 @@ $.when($.ajax("https://copa22.medeiro.tech/matches")).then(function (data) {
         let myDay = myDate[0].split("-")[2];
         let myTime = myDate[1].split(":")[0];
         myTime = parseInt(myTime) - 3;
+
+
+        // array.push(element)
+
+        //console.log(array)
 
         $("#container").append(`
                 <div class="col-md-4">
