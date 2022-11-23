@@ -26,9 +26,9 @@ $.when($.ajax("https://copa22.medeiro.tech/matches/today")).then(function (data)
 
                     <div class="card mb-3 text-center ${status}">
                         <div class="card-header">
-                            ${element.homeTeam.name}: <span class="badge badge-light">${element.homeTeam.goals}</span> 
+                            ${translateFlag[element.homeTeam.name]}: <span class="badge badge-light">${element.homeTeam.goals}</span> 
                             x 
-                            ${element.awayTeam.name}: <span class="badge badge-light">${element.awayTeam.goals}</span>
+                            ${translateFlag[element.awayTeam.name]}: <span class="badge badge-light">${element.awayTeam.goals}</span>
                         </div>
                         <ul class="list-group list-group-flush">
                             ${myDay}/${myMonth}/${myYear} as ${myTime}:00
