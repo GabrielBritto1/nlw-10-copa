@@ -25,8 +25,8 @@ $.when($.ajax("https://worldcupjson.net/matches")).then(function (data) {
             let bandeiraPais1 = element.home_team.name.toLowerCase();
             let bandeiraPais2 = element.away_team.name.toLowerCase();
 
-            let golsPais1 = element.home_team.goals==null?0:element.home_team.goals;
-            let golsPais2 = element.away_team.goals==null?0:element.away_team.goals;
+            let golsPais1 = element.home_team.goals == null ? 0 : element.home_team.goals;
+            let golsPais2 = element.away_team.goals == null ? 0 : element.away_team.goals;
 
             let dataPartida = montaData(element.datetime);
 
@@ -54,7 +54,7 @@ $.when($.ajax("https://worldcupjson.net/matches")).then(function (data) {
                 </div>
         
             `);
-                    
+
         }
     }
 });
