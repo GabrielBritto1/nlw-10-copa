@@ -24,6 +24,7 @@ $.when($.ajax("https://worldcupjson.net/matches/today")).then(function (data) {
 
             let dataPartida = montaData(element.datetime);
 
+
             let placar = `x`
             if (element.status != 'future_scheduled') {
                 placar = `
@@ -48,16 +49,16 @@ $.when($.ajax("https://worldcupjson.net/matches/today")).then(function (data) {
                                 <div class="row">
                                     <div class="col-md-6 col-sm-12">   
                                         <ul class="info list-group list-group-flush">
-                                            <li class="list-group-item">An item</li>
-                                            <li class="list-group-item">A second item</li>
-                                            <li class="list-group-item">A third item</li>
+                                            <li class="list-group-item"></li>
+                                            <li class="list-group-item"></li>
+                                            <li class="list-group-item"></li>
                                         </ul>
                                     </div>
                                     <div class="col-md-6 col-sm-12">   
                                         <ul class="info list-group list-group-flush">
-                                            <li class="list-group-item">An item</li>
-                                            <li class="list-group-item">A second item</li>
-                                            <li class="list-group-item">A third item</li>
+                                            <li class="list-group-item"></li>
+                                            <li class="list-group-item"></li>
+                                            <li class="list-group-item"></li>
                                         </ul>
                                     </div>
                                 </div>
