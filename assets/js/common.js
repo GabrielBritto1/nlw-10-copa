@@ -59,29 +59,29 @@ const translateFlag = {
     'Wales': 'Gales',
 }
 
-function montaPartida(status, time1, time2, gols1, gols2, dataFormatada) {
-    return `
-        <div class="col-md-6">
-            <div class="card text-center ${status} mb-4">
-                <div class="card-header">
-                    <img class="logoQatar" src="./assets/img/flags/${time1.toLowerCase()}.svg" alt="Bandeira do ${time1}" width="30px" style="margin-right: 15px"> 
-                    ${translateFlag[time1].toUpperCase()} 
-                    <span class="badge badge-light" style="font-size:15px; margin-left:10px; margin-right:10px">${gols1}</span> 
-                    X
-                    <span class="badge badge-light" style="font-size:15px; margin-right:10px; margin-left:10px">${gols2}</span> 
-                    ${translateFlag[time2].toUpperCase()} 
-                    <img class="logoQatar" src="./assets/img/flags/${time2.toLowerCase()}.svg" alt="Bandeira do ${time2}" width="30px" style="margin-left: 15px">
-                </div>
-                    <div class="card-footer" style="padding:0px">
-                        <ul class="list-group list-group-flush">
-                            ${dataFormatada}
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        `
-}
+// function montaPartida(status, time1, time2, gols1, gols2, dataFormatada) {
+//     return `
+//         <div class="col-md-6">
+//             <div class="card text-center ${status} mb-4">
+//                 <div class="card-header">
+//                     <img class="logoQatar" src="./assets/img/flags/${time1.toLowerCase()}.svg" alt="Bandeira do ${time1}" width="30px" style="margin-right: 15px"> 
+//                     ${translateFlag[time1].toUpperCase()} 
+//                     <span class="badge badge-light" style="font-size:15px; margin-left:10px; margin-right:10px">${gols1}</span> 
+//                     X
+//                     <span class="badge badge-light" style="font-size:15px; margin-right:10px; margin-left:10px">${gols2}</span> 
+//                     ${translateFlag[time2].toUpperCase()} 
+//                     <img class="logoQatar" src="./assets/img/flags/${time2.toLowerCase()}.svg" alt="Bandeira do ${time2}" width="30px" style="margin-left: 15px">
+//                 </div>
+//                     <div class="card-footer" style="padding:0px">
+//                         <ul class="list-group list-group-flush">
+//                             ${dataFormatada}
+//                         </ul>
+//                     </div>
+//                 </div>
+//             </div>
+//         </div>
+//         `
+// }
 
 function montaData(date) {
 

@@ -42,8 +42,6 @@ function checkingGame() {
                 </div>
                 `
             )
-        } else {
-
         }
     });
 

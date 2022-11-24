@@ -52,17 +52,8 @@ $.when($.ajax("https://worldcupjson.net/matches")).then(function (data) {
                         </div>
                     </div>
                 </div>
-        
             `);
 
         }
     }
 });
-
-/* 
-<div class="card-footer" style="padding:0px">
-    <ul class="list-group list-group-flush">
-        ${dataPartida}
-    </ul>
-</div>
-*/
