@@ -26,17 +26,17 @@ $("#nav").html(`
 
 const translateFlag = {
     'Argentina': 'Argentina',
-    'Australia': 'Australia',
-    'Belgium': 'Belgica',
+    'Australia': 'Austrália',
+    'Belgium': 'Bélgica',
     'Brazil': 'Brasil',
-    'Cameroon': 'Camaroes',
-    'Canada': 'Canada',
+    'Cameroon': 'Camarões',
+    'Canada': 'Canadá',
     'Costa Rica': 'Costa Rica',
-    'Croatia': 'Croacia',
+    'Croatia': 'Croácia',
     'Denmark': 'Dinamarca',
     'Ecuador': 'Equador',
     'England': 'Inglaterra',
-    'France': 'Franca',
+    'France': 'França',
     'Germany': 'Alemanha',
     'Ghana': 'Gana',
     'Iran': 'Irã',
@@ -50,12 +50,12 @@ const translateFlag = {
     'Qatar': 'Catar',
     'Saudi Arabia': 'Arabia Saudita',
     'Senegal': 'Senegal',
-    'Serbia': 'Servia',
+    'Serbia': 'Sérvia',
     'Spain': 'Espanha',
     'Switzerland': 'Suiça',
     'Tunisia': 'Tunisia',
     'Uruguay': 'Uruguai',
-    'USA': 'EUA',
+    'United States': 'Estados Unidos',
     'Wales': 'Gales',
 }
 
@@ -91,5 +91,5 @@ function montaData(date) {
     let myDay = myDate[0].split("-")[2];
     let myTime = myDate[1].split(":")[0];
     myTime = parseInt(myTime) - 3;
-    return `${myDay}/${myMonth}/${myYear} as ${myTime}:00`
+    return `${myDay}/${myMonth}/${myYear} às ${myTime}:00`
 }

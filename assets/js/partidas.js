@@ -50,6 +50,11 @@ $.when($.ajax("https://worldcupjson.net/matches")).then(function (data) {
                             ${pais2} 
                             <img class="logoQatar" src="./assets/img/flags/${bandeiraPais2}.svg" width="30px" style="margin-left: 15px">
                         </div>
+
+                        <div>
+                        ${dataPartida}
+                        </div>
+
                     </div>
                 </div>
             `);

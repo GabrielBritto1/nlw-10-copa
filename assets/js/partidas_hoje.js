@@ -1,64 +1,89 @@
-// consulta ajax ao endpoint
-$.when($.ajax("https://worldcupjson.net/matches/today")).then(function (data) {
-    console.log(data)
+montaJogos();
 
-    for (let index = 0; index < data.length; index++) {
-        const element = data[index];
+$("#date-button").on('click', function () {
+
+    let dataRecebida = $("#date-game").val();
+    montaJogos(dataRecebida);
+});
+
+function montaJogos(selectDate) {
+
+    $.when($.ajax(`https://worldcupjson.net/matches?start_date=${selectDate}&details=true`)).then(function (data) {
+
+
+        $("#container").html("");
+
         let status = ``;
+        let events = ``;
+        let events2 = ``;
+        for (let index = 0; index < data.length; index++) {
+            const element = data[index];
 
-        // condicionais para mudar a cor do background
-        if (element.status == "in_progress") {
-            status = `bg-warning`;
-        }
+            events = ``;
+            for (let index2 = 0; index2 < element.home_team_events.length; index2++) {
+                const element2 = element.home_team_events[index2];
 
-        if (element.home_team.name != 'To Be Determined') {
+                events += ` 
+                    <li class="list-group-item">${element2.type_of_event.toUpperCase()}: ${element2.player} aos ${element2.time}</li>
+                `
+            }
 
-            let pais1 = element.home_team.name.toUpperCase();
-            let pais2 = element.away_team.name.toUpperCase();
+            events2 = ``;
+            for (let index3 = 0; index3 < element.away_team_events.length; index3++) {
+                const element3 = element.away_team_events[index3];
+                console.log(element3)
 
-            let bandeiraPais1 = element.home_team.name.toLowerCase();
-            let bandeiraPais2 = element.away_team.name.toLowerCase();
+                events2 += ` 
+                    <li class="list-group-item">${element3.type_of_event.toUpperCase()}: ${element3.player} aos ${element3.time}</li>
+                `
+            }
 
-            let golsPais1 = element.home_team.goals == null ? 0 : element.home_team.goals;
-            let golsPais2 = element.away_team.goals == null ? 0 : element.away_team.goals;
+            // condicionais para mudar a cor do background
+            if (element.status == "in_progress") {
+                status = `bg-warning`;
+            }
 
-            let dataPartida = montaData(element.datetime);
+            if (element.home_team.name != 'To Be Determined') {
+
+                let bandeiraPais1 = element.home_team.name.toLowerCase();
+                let bandeiraPais2 = element.away_team.name.toLowerCase();
+
+                let golsPais1 = element.home_team.goals == null ? 0 : element.home_team.goals;
+                let golsPais2 = element.away_team.goals == null ? 0 : element.away_team.goals;
+
+                let dataPartida = montaData(element.datetime);
 
 
-            let placar = `x`
-            if (element.status != 'future_scheduled') {
-                placar = `
+                let placar = `x`
+                if (element.status != 'future_scheduled') {
+                    placar = `
                     <span class="badge badge-dark" style="font-size:15px; margin-left:10px; margin-right:10px">${golsPais1}</span> 
                     x
                     <span class="badge badge-dark" style="font-size:15px; margin-right:10px; margin-left:10px">${golsPais2}</span>
                 `
-            }
+                }
 
-            $("#container").append(`
+                $("#container").append(`
         
                 <div class="col-md-6 col-sm-12">
                     <div class="card text-center ${status} mb-4">
                         <div class="card-header">
                             <img class="logoQatar" src="./assets/img/flags/${bandeiraPais1}.svg" width="30px" style="margin-right: 15px"> 
-                            ${pais1}
+                            ${translateFlag[element.home_team.name].toUpperCase()}
                             ${placar}
-                            ${pais2} 
+                            ${translateFlag[element.away_team.name].toUpperCase()}
                             <img class="logoQatar" src="./assets/img/flags/${bandeiraPais2}.svg" width="30px" style="margin-left: 15px">
                         </div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-6 col-sm-12">   
                                         <ul class="info list-group list-group-flush">
-                                            <li class="list-group-item"></li>
-                                            <li class="list-group-item"></li>
-                                            <li class="list-group-item"></li>
+                                        ${events}
                                         </ul>
                                     </div>
                                     <div class="col-md-6 col-sm-12">   
                                         <ul class="info list-group list-group-flush">
-                                            <li class="list-group-item"></li>
-                                            <li class="list-group-item"></li>
-                                            <li class="list-group-item"></li>
+                                            ${events2}
                                         </ul>
                                     </div>
                                 </div>
@@ -67,6 +92,7 @@ $.when($.ajax("https://worldcupjson.net/matches/today")).then(function (data) {
                 </div>
             `);
 
+            }
         }
-    }
-});
+    });
+}
