@@ -1,4 +1,4 @@
-montaJogos('2022-11-24');
+montaJogos();
 
 $("#date-game").on('change', function () {
 
@@ -23,20 +23,13 @@ function montaJogos(selectDate) {
             for (let index2 = 0; index2 < element.home_team_events.length; index2++) {
                 const element2 = element.home_team_events[index2];
 
-                console.log(element2)
-                if (element2.type_of_event == 'goal') {
-                    let iconGol = '<i class="fa-regular fa-futbol"></i>';
-                    let iconSub = '<i class="fa-solid fa-arrows-rotate"></i>';
-
-                    events += ` 
-                    <li class="list-group-item">${iconGol} : ${element2.player} aos ${element2.time}</li>
+                events += ` 
+                    <li class="list-group-item">${translateEvents[element2.type_of_event].toUpperCase()} : ${element2.player} aos ${element2.time}</li>
                     `
-                }
 
                 events2 = ``;
                 for (let index3 = 0; index3 < element.away_team_events.length; index3++) {
                     const element3 = element.away_team_events[index3];
-                    console.log(element3)
 
                     events2 += ` 
                     <li class="list-group-item">${translateEvents[element3.type_of_event].toUpperCase()}: ${element3.player} aos ${element3.time}</li>
