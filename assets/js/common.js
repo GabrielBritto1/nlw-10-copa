@@ -59,6 +59,12 @@ const translateFlag = {
     'Wales': 'Gales',
 }
 
+const translateEvents = {
+    'goal': 'Gol',
+    'substitution': 'Substituição',
+    'booking': 'Reserva',
+}
+
 // function montaPartida(status, time1, time2, gols1, gols2, dataFormatada) {
 //     return `
 //         <div class="col-md-6">

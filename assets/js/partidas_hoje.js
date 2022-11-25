@@ -1,6 +1,6 @@
 montaJogos();
 
-$("#date-button").on('click', function () {
+$("#date-game").on('change', function () {
 
     let dataRecebida = $("#date-game").val();
     montaJogos(dataRecebida);
@@ -24,7 +24,7 @@ function montaJogos(selectDate) {
                 const element2 = element.home_team_events[index2];
 
                 events += ` 
-                    <li class="list-group-item">${element2.type_of_event.toUpperCase()}: ${element2.player} aos ${element2.time}</li>
+                    <li class="list-group-item">${translateEvents[element2.type_of_event].toUpperCase()}: ${element2.player} aos ${element2.time}</li>
                 `
             }
 
@@ -34,7 +34,7 @@ function montaJogos(selectDate) {
                 console.log(element3)
 
                 events2 += ` 
-                    <li class="list-group-item">${element3.type_of_event.toUpperCase()}: ${element3.player} aos ${element3.time}</li>
+                    <li class="list-group-item">${translateEvents[element3.type_of_event].toUpperCase()}: ${element3.player} aos ${element3.time}</li>
                 `
             }
 

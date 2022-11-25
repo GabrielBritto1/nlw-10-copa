@@ -1,8 +1,8 @@
 checkingGame()
 
-// setInterval(() => {
-//     checkingGame()
-// }, 3000);
+setInterval(() => {
+    checkingGame()
+}, 3000);
 
 function checkingGame() {
     $.when($.ajax("https://worldcupjson.net/matches/current")).then(function (data) {
