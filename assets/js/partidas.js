@@ -28,6 +28,9 @@ $.when($.ajax("https://worldcupjson.net/matches")).then(function (data) {
             let golsPais1 = element.home_team.goals == null ? 0 : element.home_team.goals;
             let golsPais2 = element.away_team.goals == null ? 0 : element.away_team.goals;
 
+            let traduzido1 = translateFlag[element.home_team.name].toUpperCase();
+            let traduzido2 = translateFlag[element.away_team.name].toUpperCase();
+
             let dataPartida = montaData(element.datetime);
 
             let placar = `x`
@@ -44,11 +47,11 @@ $.when($.ajax("https://worldcupjson.net/matches")).then(function (data) {
                 <div data-anijs="if: mouseover, do: hinge animated" class="col-md-6 col-sm-12">
                     <div class="card text-center ${status} mb-4">
                         <div class="card-header">
-                            <img class="logoQatar" src="./assets/img/flags/${bandeiraPais1}.svg" width="30px" style="margin-right: 15px"> 
+                        <img class="logoQatar" data-toggle="tooltip" data-placement="bottom" title="${traduzido1.toUpperCase()}" src="./assets/img/flags/${bandeiraPais1}.svg" width="30px" style="margin-right: 15px"> 
                             ${pais1} 
                             ${placar}
                             ${pais2} 
-                            <img class="logoQatar" src="./assets/img/flags/${bandeiraPais2}.svg" width="30px" style="margin-left: 15px">
+                        <img class="logoQatar" data-toggle="tooltip" data-placement="bottom" title="${traduzido2.toUpperCase()}" src="./assets/img/flags/${bandeiraPais2}.svg" width="30px" style="margin-left: 15px">
                         </div>
 
                         <div>
@@ -58,9 +61,6 @@ $.when($.ajax("https://worldcupjson.net/matches")).then(function (data) {
                     </div>
                 </div>
             `);
-
-            AniJS.run();
-
         }
     }
 });
