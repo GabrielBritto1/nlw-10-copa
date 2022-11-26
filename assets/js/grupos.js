@@ -75,13 +75,15 @@ $(document).ready( function () {
     //     counter++;
     // });
 
-    // $('#table-0').DataTable();
-    // $('#table-1').DataTable();
-    // $('#table-2').DataTable();
-    // $('#table-3').DataTable();
-    // $('#table-4').DataTable();
-    // $('#table-5').DataTable();
-    // $('#table-6').DataTable();
-    // $('#table-7').DataTable();
+    setTimeout(() => {
+        $('#table-0').DataTable({searching: false, paging: false, info: false, order: [[1, 'desc']]});
+        $('#table-1').DataTable({searching: false, paging: false, info: false, order: [[1, 'desc']]});
+        $('#table-2').DataTable({searching: false, paging: false, info: false, order: [[1, 'desc']]});
+        $('#table-3').DataTable({searching: false, paging: false, info: false, order: [[1, 'desc']]});
+        $('#table-4').DataTable({searching: false, paging: false, info: false, order: [[1, 'desc']]});
+        $('#table-5').DataTable({searching: false, paging: false, info: false, order: [[1, 'desc']]});
+        $('#table-6').DataTable({searching: false, paging: false, info: false, order: [[1, 'desc']]});
+        $('#table-7').DataTable({searching: false, paging: false, info: false, order: [[1, 'desc']]});
+    }, 500);
 
 } );
