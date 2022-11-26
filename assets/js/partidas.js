@@ -44,7 +44,7 @@ $.when($.ajax("https://worldcupjson.net/matches")).then(function (data) {
 
             $("#container").append(`
             
-                <div data-anijs="if: mouseover, do: hinge animated" class="col-md-6 col-sm-12">
+                <div data-anijs="if: mouseover, do: rubberBand animated" class="col-md-6 col-sm-12">
                     <div class="card text-center ${status} mb-4">
                         <div class="card-header">
                         <img class="logoQatar" data-toggle="tooltip" data-placement="bottom" title="${traduzido1.toUpperCase()}" src="./assets/img/flags/${bandeiraPais1}.svg" width="30px" style="margin-right: 15px"> 
