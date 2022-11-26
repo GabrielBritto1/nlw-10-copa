@@ -11,9 +11,6 @@ $("#nav").html(`
                 <a class="nav-link" href="./partidas.html">Partidas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./partidas_hoje.html">Partidas Hoje</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="./grupos.html">Grupos</a>
                 </li>
             </ul>
