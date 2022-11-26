@@ -61,6 +61,9 @@ $.when($.ajax("https://worldcupjson.net/matches")).then(function (data) {
                     </div>
                 </div>
             `);
+
+            AniJS.run();
+
         }
     }
 });
