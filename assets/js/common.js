@@ -13,6 +13,9 @@ $("#nav").html(`
                 <li class="nav-item">
                     <a class="nav-link" href="./grupos.html">Grupos</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./times.html">Times</a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -57,6 +60,41 @@ const translateEvents = {
     'goal': 'Gol',
     'substitution': 'Substituição',
     'booking': 'Reserva',
+}
+
+const translateCountry = {
+    'QAT': 'Catar',
+    'ECU': 'Equador',
+    'ENG': 'Inglaterra',
+    'IRN': 'Irã',
+    'SEN': 'Senegal',
+    'NED': 'Holanda',
+    'USA': 'Estados Unidos',
+    'WAL': 'Gales',
+    'ARG': 'Argentina',
+    'KSA': 'Arabia Saudita',
+    'DEN': 'Dinamarca',
+    'TUN': 'Tunisia',
+    'MEX': 'México',
+    'POL': 'Polonia',
+    'FRA': 'França',
+    'AUS': 'Austrália',
+    'MAR': 'Marrocos',
+    'CRO': 'Croácia',
+    'GER': 'Alemanha',
+    'JPN': 'Japão',
+    'ESP': 'Espanha',
+    'CRC': 'Costa Rica',
+    'BEL': 'Bélgica',
+    'CAN': 'Canadá',
+    'SUI': 'Suiça',
+    'CMR': 'Camarões',
+    'URU': 'Uruguai',
+    'KOR': 'Coreia do Sul',
+    'POR': 'Portugal',
+    'GHA': 'Gana',
+    'BRA': 'Brasil',
+    'SRB': 'Sérvia',
 }
 
 // function montaPartida(status, time1, time2, gols1, gols2, dataFormatada) {

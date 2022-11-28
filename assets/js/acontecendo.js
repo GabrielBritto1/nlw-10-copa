@@ -34,7 +34,7 @@ function checkingGame() {
                         <li class="list-group-item">${translateEvents[evento2.type_of_event].toUpperCase()}: ${evento2.player} aos ${evento2.time}</li>
                     `
                 }
-                
+
                 $("#container").append(`
                     <div class="col-md-12">
                         <div class="card text-center">
