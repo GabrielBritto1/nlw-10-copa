@@ -1,11 +1,11 @@
-checkingGame()
-montaJogos()
+tempoReal()
+jogosDoDia()
 
 setInterval(() => {
-    checkingGame()
+    tempoReal()
 }, 3000);
 
-function checkingGame() {
+function tempoReal() {
     $.when($.ajax("https://worldcupjson.net/matches/current")).then(function (data) {
 
         $("#container").html("");
@@ -17,26 +17,18 @@ function checkingGame() {
             for (let index = 0; index < data.length; index++) {
                 const element = data[index];
 
+                // zerando variáveis para próxima iteração
                 events = ``;
-                for (let index2 = 0; index2 < element.home_team_events.length; index2++) {
-                    const evento1 = element.home_team_events[index2];
-
-                    events += ` 
-                            <li class="list-group-item">${translateEvents[evento1.type_of_event].toUpperCase()} : ${evento1.player} aos ${evento1.time}</li>
-                            `
-                }
-
                 events2 = ``;
-                for (let index3 = 0; index3 < element.away_team_events.length; index3++) {
-                    const evento2 = element.away_team_events[index3];
 
-                    events2 += ` 
-                        <li class="list-group-item">${translateEvents[evento2.type_of_event].toUpperCase()}: ${evento2.player} aos ${evento2.time}</li>
-                    `
-                }
+                // buscando os acontecimentos do time 1 para exibir na tela
+                events = montaIcones(element.home_team_events);
+
+                // buscando os acontecimentos do time 2 para exibir na tela
+                events2 = montaIcones(element.away_team_events);
 
                 $("#container").append(`
-                    <div class="col-md-12">
+                    <div class="col-md-12 mb-3">
                         <div class="card text-center">
                             <div class="card-header">
                                 ${translateFlag[element.home_team.name].toUpperCase()} 
@@ -102,49 +94,40 @@ function checkingGame() {
 $("#date-game").on('change', function () {
 
     let dataRecebida = $("#date-game").val();
-    montaJogos(dataRecebida);
+    jogosDoDia(dataRecebida);
 });
 
-function montaJogos(selectDate) {
+function jogosDoDia(selectDate) {
 
     $.when($.ajax(`https://worldcupjson.net/matches?start_date=${selectDate}&details=true`)).then(function (data) {
 
 
         $("#container2").html("");
 
+        // inicializando variáveis
         let status = ``;
         let events = ``;
         let events2 = ``;
+
+        // iterando sob os dados retornados da API
         for (let index = 0; index < data.length; index++) {
+
+            // armazenando dados em uma constante para ficar mais fácil de entender
             const element = data[index];
 
+            // zerando variáveis para próxima iteração
+            status = ``;
             events = ``;
-            for (let index2 = 0; index2 < element.home_team_events.length; index2++) {
-                const element2 = element.home_team_events[index2];
+            events2 = ``;
 
-                if (element2.type_of_event == 'goal') {
+            // buscando os acontecimentos do time 1 para exibir na tela
+            events = montaIcones(element.home_team_events);
 
-                    let iconGol = '<i class="fa-regular fa-futbol"></i>';
+            // buscando os acontecimentos do time 2 para exibir na tela
+            events2 = montaIcones(element.away_team_events);
+        
 
-                    events += ` 
-                    <li class="list-group-item">${iconGol} : ${element2.player} aos ${element2.time}</li>
-                    `
-                }
-
-                events2 = ``;
-                for (let index3 = 0; index3 < element.away_team_events.length; index3++) {
-                    const element3 = element.away_team_events[index3];
-                    if (element3.type_of_event == 'goal') {
-
-                        let iconGol = '<i class="fa-regular fa-futbol"></i>';
-
-                        events2 += ` 
-                            <li class="list-group-item">${iconGol} : ${element3.player} aos ${element3.time}</li>
-                            `
-                    }
-                }
-            }
-            // condicionais para mudar a cor do background
+            // condicionais para mudar a cor do background caso o jogo esteja acontecendo agora
             if (element.status == "in_progress") {
                 status = `bg-warning`;
             }
@@ -201,4 +184,28 @@ function montaJogos(selectDate) {
             }
         }
     });
+}
+
+
+function montaIcones(data) {
+    let events = ''
+    // buscando os acontecimentos do time no jogo para exibir na tela
+    for (let index2 = 0; index2 < data.length; index2++) {
+        const element = data[index2];
+
+        // verificando se o evento foi um gol para colocar o icone
+        let iconEvent = element.type_of_event;
+        if (element.type_of_event == 'goal') {
+            iconEvent = '<i class="fa-regular fa-futbol"></i>';
+        } else if (element.type_of_event == 'substitution') {
+            iconEvent = '<i class="fa-solid fa-arrow-right-arrow-left"></i>';
+        } else if (element.type_of_event == 'booking') {
+            iconEvent = '<i class="fa-regular fa-square-full"></i>';
+        }
+
+        events += `<li class="list-group-item">${iconEvent} &nbsp; ${element.player} aos ${element.time}</li>`
+    }
+
+    return events
+
 }
