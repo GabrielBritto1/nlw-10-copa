@@ -18,7 +18,7 @@ $(document).ready( function () {
 
                 times += ` 
                     <tr class="${class_tr}">
-                        <td class="text-left"><img class="img" src="./assets/img/flags/${element2.name.toLowerCase()}.svg" alt="Bandeira do ${element2.name}" width="20px"> &nbsp; ${element2.country}</td>
+                        <td class="text-left"><img class="img img-country" data-sigla="${element2.country}" src="./assets/img/flags/${element2.name.toLowerCase()}.svg" alt="Bandeira do ${element2.name}" width="20px"> &nbsp; ${element2.country}</td>
                         <td>${element2.group_points}</td>
                         <td class="d-none">${element2.wins}</td>
                         <td class="d-none">${element2.draws}</td>
@@ -60,20 +60,9 @@ $(document).ready( function () {
                     </div>
                 `)
 
-
         }
 
-
     });
-
-    // var t = $('#example').DataTable();
-    // var counter = 1;
-
-    // $('#addRow').on('click', function () {
-    //     t.row.add([counter + '.1', counter + '.2', counter + '.3', counter + '.4', counter + '.5']).draw(false);
- 
-    //     counter++;
-    // });
 
     setTimeout(() => {
         $('#table-0').DataTable({searching: false, paging: false, info: false, order: [[1, 'desc'], [8, 'desc']]});
@@ -85,5 +74,21 @@ $(document).ready( function () {
         $('#table-6').DataTable({searching: false, paging: false, info: false, order: [[1, 'desc'], [8, 'desc']]});
         $('#table-7').DataTable({searching: false, paging: false, info: false, order: [[1, 'desc'], [8, 'desc']]});
     }, 500);
+
+    // pego o click na imagem do país
+    $("#container").on("click", ".img-country", function(){
+
+        // pego o atributo que armazenei no elemento <img>
+        let sigla = $(this).data('sigla');
+
+        // salvo o storage do js a sigla do país para usar na outra pagina
+        localStorage.setItem('country_sigla', sigla);
+
+        // para pegar a url atual, uso o split e concateno com o caminho que quero
+        let url = window.location.href.split('/grupos')
+
+        // monto a url e redireciono
+        window.location.href = url[0]+"/times.html";
+    })
 
 } );
