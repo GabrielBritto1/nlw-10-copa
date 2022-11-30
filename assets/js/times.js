@@ -11,6 +11,12 @@ function montaTime(selectTeam) {
         const element = data;
         $("#container").html('');
 
+        let timeContra = element.last_match.home_team;
+        if (element.country == timeContra) {
+            timeContra = element.last_match.away_team;
+        }
+
+
         $("#container").append(`
                 <div class="col-md-12">
                     <div class="card text-center mb-4">
@@ -34,7 +40,7 @@ function montaTime(selectTeam) {
                                     <div class="col-md-6 col-sm-12">   
                                     <ul class="info list-group list-group">
                                             <h5 class="list-group-item" style="color: #9b072e">ULTIMA PARTIDA:</h5>
-                                            <li class="list-group-item">CONTRA: ${translateCountry[element.last_match.away_team].toUpperCase()}</li>
+                                            <li class="list-group-item">CONTRA: ${translateCountry[timeContra].toUpperCase()}</li>
                                             <li class="list-group-item">GOLS ${translateFlag[element.name].toUpperCase()}: ${element.last_match.home_team_score}</li>
                                             <li class="list-group-item">PÊNALTIS ${translateFlag[element.name].toUpperCase()}: ${element.last_match.home_team_penalties}</li>
                                             <li class="list-group-item">GOLS ${translateCountry[element.last_match.away_team].toUpperCase()}: ${element.last_match.away_team_score}</li>
