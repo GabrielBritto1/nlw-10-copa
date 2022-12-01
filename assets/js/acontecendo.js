@@ -41,9 +41,9 @@ $(document).ready(function () {
                                 <div class="card-body">
                                     <p class="card-text">
                                         <img class="logoQatar" src="./assets/img/flags/${element.home_team.name.toLowerCase()}.svg" alt="Bandeira do ${element.home_team.name}" width="40px" style="margin-right: 15px">
-                                        <span class="badge badge-light" style="font-size: 15px;">${element.home_team.goals}</span>
+                                        <span class="badge badge-light" style="font-size: 15px;cursor:pointer;">${element.home_team.goals}</span>
                                         x
-                                        <span class="badge badge-light" style="font-size: 15px;">${element.away_team.goals}</span>
+                                        <span class="badge badge-light" style="font-size: 15px;cursor:pointer;">${element.away_team.goals}</span>
                                         <img class="logoQatar" src="./assets/img/flags/${element.away_team.name.toLowerCase()}.svg" alt="Bandeira do ${element.away_team.name}" width="40px" style="margin-left: 15px">
                                     </p>
                                 </div>
@@ -160,11 +160,11 @@ $(document).ready(function () {
                     <div class="col-md-6 col-sm-12">
                         <div class="card text-center ${status} mb-4">
                             <div class="card-header">
-                                <img class="img-country" data-sigla="${country1}" src="./assets/img/flags/${bandeiraPais1}.svg" width="30px" style="margin-right: 15px"> 
+                                <img class="img-country" style="cursor:pointer;" data-sigla="${country1}" src="./assets/img/flags/${bandeiraPais1}.svg" width="30px" style="margin-right: 15px"> 
                                 ${translateFlag[element.home_team.name].toUpperCase()}
                                 ${placar}
                                 ${translateFlag[element.away_team.name].toUpperCase()}
-                                <img class="img-country" data-sigla="${country2}" src="./assets/img/flags/${bandeiraPais2}.svg" width="30px" style="margin-left: 15px">
+                                <img class="img-country" style="cursor:pointer;" data-sigla="${country2}" src="./assets/img/flags/${bandeiraPais2}.svg" width="30px" style="margin-left: 15px">
                             </div>
                                 <div class="card-body">
                                     <div class="row">

@@ -1,4 +1,4 @@
-$(document).ready( function () {
+$(document).ready(function () {
 
     // LISTAGEM DE PARTIDAS
 
@@ -52,11 +52,11 @@ $(document).ready( function () {
                     <div class="col-md-6 col-sm-12">
                         <div class="card text-center ${status} mb-4">
                             <div class="card-header">
-                            <img data-toggle="tooltip" class="img-country" data-sigla="${pais1}" data-placement="bottom" title="${traduzido1.toUpperCase()}" src="./assets/img/flags/${bandeiraPais1}.svg" width="30px" style="margin-right: 15px"> 
+                            <img data-toggle="tooltip" class="img-country" style="cursor:pointer;" data-sigla="${pais1}" title="${traduzido1.toUpperCase()}" src="./assets/img/flags/${bandeiraPais1}.svg" width="30px" style="margin-right: 15px"> 
                                 ${pais1} 
                                 ${placar}
                                 ${pais2} 
-                            <img data-toggle="tooltip" class="img-country" data-sigla="${pais2}" data-placement="bottom" title="${traduzido2.toUpperCase()}" src="./assets/img/flags/${bandeiraPais2}.svg" width="30px" style="margin-left: 15px">
+                            <img data-toggle="tooltip" class="img-country" style="cursor:pointer;" data-sigla="${pais2}" title="${traduzido2.toUpperCase()}" src="./assets/img/flags/${bandeiraPais2}.svg" width="30px" style="margin-left: 15px">
                             </div>
 
                             <div>
@@ -74,20 +74,20 @@ $(document).ready( function () {
     });
 
 
-    // pego o click na imagem do país
-    $("#container").on("click", ".img-country", function(){
-        
+    // pego o click na imagem do paï¿½s
+    $("#container").on("click", ".img-country", function () {
+
         // pego o atributo que armazenei no elemento <img>
         let sigla = $(this).data('sigla');
-        
-        // salvo o storage do js a sigla do país para usar na outra pagina
+
+        // salvo o storage do js a sigla do paï¿½s para usar na outra pagina
         localStorage.setItem('country_sigla', sigla);
-        
+
         // para pegar a url atual, uso o split e concateno com o caminho que quero
         let url = window.location.href.split('/partidas')
-        
+
         // monto a url e redireciono
-        window.location.href = url[0]+"/times.html";
+        window.location.href = url[0] + "/times.html";
     })
 
 });
