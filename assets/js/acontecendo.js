@@ -1,4 +1,4 @@
-$(document).ready( function () {
+$(document).ready(function () {
 
     tempoReal()
     jogosDoDia()
@@ -19,7 +19,7 @@ $(document).ready( function () {
                 for (let index = 0; index < data.length; index++) {
                     const element = data[index];
 
-                    // zerando variáveis para próxima iteração
+                    // zerando variï¿½veis para prï¿½xima iteraï¿½ï¿½o
                     events = ``;
                     events2 = ``;
 
@@ -104,7 +104,7 @@ $(document).ready( function () {
 
             $("#container2").html("");
 
-            // inicializando variáveis
+            // inicializando variï¿½veis
             let status = ``;
             let events = ``;
             let events2 = ``;
@@ -112,10 +112,10 @@ $(document).ready( function () {
             // iterando sob os dados retornados da API
             for (let index = 0; index < data.length; index++) {
 
-                // armazenando dados em uma constante para ficar mais fácil de entender
+                // armazenando dados em uma constante para ficar mais fï¿½cil de entender
                 const element = data[index];
 
-                // zerando variáveis para próxima iteração
+                // zerando variï¿½veis para prï¿½xima iteraï¿½ï¿½o
                 status = ``;
                 events = ``;
                 events2 = ``;
@@ -125,7 +125,7 @@ $(document).ready( function () {
 
                 // buscando os acontecimentos do time 2 para exibir na tela
                 events2 = montaIcones(element.away_team_events);
-            
+
 
                 // condicionais para mudar a cor do background caso o jogo esteja acontecendo agora
                 if (element.status == "in_progress") {
@@ -212,20 +212,20 @@ $(document).ready( function () {
         return events
     }
 
-    // pego o click na imagem do país
-    $("#container2").on("click", ".img-country", function(){
-        
+    // pego o click na imagem do paï¿½s
+    $("#container2").on("click", ".img-country", function () {
+
         // pego o atributo que armazenei no elemento <img>
         let sigla = $(this).data('sigla');
-        
-        // salvo o storage do js a sigla do país para usar na outra pagina
+
+        // salvo o storage do js a sigla do paï¿½s para usar na outra pagina
         localStorage.setItem('country_sigla', sigla);
-        
+
         // para pegar a url atual, uso o split e concateno com o caminho que quero
-        let url = window.location.href.split('copa/')
-        
+        let url = window.location.href.split('/index')
+
         // monto a url e redireciono
-        window.location.href = url[0]+"copa/times.html";
+        window.location.href = url[0] + "/times.html";
     })
 
 });
