@@ -21,55 +21,63 @@ $(document).ready( function () {
                 status = `bg-warning`;
             }
 
-            if (element.home_team.name != 'To Be Determined') {
+            let pais1 = element.home_team.country.toUpperCase();
+            let pais2 = element.away_team.country.toUpperCase();
 
-                let pais1 = element.home_team.country.toUpperCase();
-                let pais2 = element.away_team.country.toUpperCase();
+            let bandeiraPais1 = element.home_team.name.toLowerCase();
+            let bandeiraPais2 = element.away_team.name.toLowerCase();
 
-                let bandeiraPais1 = element.home_team.name.toLowerCase();
-                let bandeiraPais2 = element.away_team.name.toLowerCase();
+            let golsPais1 = element.home_team.goals == null ? 0 : element.home_team.goals;
+            let golsPais2 = element.away_team.goals == null ? 0 : element.away_team.goals;
 
-                let golsPais1 = element.home_team.goals == null ? 0 : element.home_team.goals;
-                let golsPais2 = element.away_team.goals == null ? 0 : element.away_team.goals;
+            let traduzido1 = translateFlag[element.home_team.name].toUpperCase();
+            let traduzido2 = translateFlag[element.away_team.name].toUpperCase();
 
-                let traduzido1 = translateFlag[element.home_team.name].toUpperCase();
-                let traduzido2 = translateFlag[element.away_team.name].toUpperCase();
+            let dataPartida = montaData(element.datetime);
 
-                let dataPartida = montaData(element.datetime);
-
-                let placar = `x`
-                if (element.status != 'future_scheduled') {
-                    placar = `
-                        <span class="badge badge-dark" style="font-size:15px; margin-left:10px; margin-right:10px">${golsPais1}</span> 
-                        x
-                        <span class="badge badge-dark" style="font-size:15px; margin-right:10px; margin-left:10px">${golsPais2}</span>
-                    `
-                }
-
-                // <div data-anijs="if: mouseover, do: rubberBand animated" class="col-md-6 col-sm-12">
-                $("#container").append(`
-                
-                    <div class="col-md-6 col-sm-12">
-                        <div class="card text-center ${status} mb-4">
-                            <div class="card-header">
-                            <img data-toggle="tooltip" class="img-country" data-sigla="${pais1}" data-placement="bottom" title="${traduzido1.toUpperCase()}" src="./assets/img/flags/${bandeiraPais1}.svg" width="30px" style="margin-right: 15px"> 
-                                ${pais1} 
-                                ${placar}
-                                ${pais2} 
-                            <img data-toggle="tooltip" class="img-country" data-sigla="${pais2}" data-placement="bottom" title="${traduzido2.toUpperCase()}" src="./assets/img/flags/${bandeiraPais2}.svg" width="30px" style="margin-left: 15px">
-                            </div>
-
-                            <div>
-                            ${dataPartida}
-                            </div>
-
-                        </div>
-                    </div>
-                `);
-
-                AniJS.run();
-
+            let placar = `x`
+            if (element.status != 'future_scheduled') {
+                placar = `
+                    <span class="badge badge-dark" style="font-size:15px; margin-left:10px; margin-right:10px">${golsPais1}</span> 
+                    x
+                    <span class="badge badge-dark" style="font-size:15px; margin-right:10px; margin-left:10px">${golsPais2}</span>
+                `
             }
+
+            let estagios = {
+                'First stage':'Fase de grupos',
+                'Round of 16':'Oitavas de final',
+                'Semi-final':'Semifinal',
+                'Play-off for third place':'Disputa do terceiro lugar',
+                'Final':'Final'
+            }
+
+            // <div data-anijs="if: mouseover, do: rubberBand animated" class="col-md-6 col-sm-12">
+            $("#container").append(`
+            
+                <div class="col-md-6 col-sm-12">
+                    <div class="card text-center ${status} mb-4">
+                        <div class="card-header">
+                        <img data-toggle="tooltip" class="img-country" data-sigla="${pais1}" data-placement="bottom" title="${traduzido1.toUpperCase()}" src="./assets/img/flags/${bandeiraPais1}.svg" width="30px" style="margin-right: 15px"> 
+                        ${pais1} 
+                        ${placar}
+                        ${pais2} 
+                        <img data-toggle="tooltip" class="img-country" data-sigla="${pais2}" data-placement="bottom" title="${traduzido2.toUpperCase()}" src="./assets/img/flags/${bandeiraPais2}.svg" width="30px" style="margin-left: 15px">
+                        </div>
+
+                        <div>
+                            ${dataPartida}
+                        </div>
+                        <div>
+                            ${estagios[element.stage_name]}
+                        </div>
+
+                    </div>
+                </div>
+            `);
+
+            AniJS.run();
+
         }
     });
 

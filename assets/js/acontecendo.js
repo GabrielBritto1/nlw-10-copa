@@ -76,16 +76,16 @@ $(document).ready( function () {
 
             } else {
 
-                $("#container").append(`
-                    <div class="col-md-12">
-                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                            Putz, nenhuma partida ocorrendo no momento :(
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                    </div>
-                `)
+                // $("#container").append(`
+                //     <div class="col-md-12">
+                //         <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                //             Putz, nenhuma partida ocorrendo no momento :(
+                //             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                //                 <span aria-hidden="true">&times;</span>
+                //             </button>
+                //         </div>
+                //     </div>
+                // `)
             }
 
 
@@ -126,65 +126,61 @@ $(document).ready( function () {
                 // buscando os acontecimentos do time 2 para exibir na tela
                 events2 = montaIcones(element.away_team_events);
             
-
                 // condicionais para mudar a cor do background caso o jogo esteja acontecendo agora
                 if (element.status == "in_progress") {
                     status = `bg-warning`;
                 }
 
-                if (element.home_team.name != 'To Be Determined') {
+                let country1 = element.home_team.country;
+                let country2 = element.away_team.country;
 
-                    let country1 = element.home_team.country;
-                    let country2 = element.away_team.country;
+                let bandeiraPais1 = element.home_team.name.toLowerCase();
+                let bandeiraPais2 = element.away_team.name.toLowerCase();
 
-                    let bandeiraPais1 = element.home_team.name.toLowerCase();
-                    let bandeiraPais2 = element.away_team.name.toLowerCase();
+                let golsPais1 = element.home_team.goals == null ? 0 : element.home_team.goals;
+                let golsPais2 = element.away_team.goals == null ? 0 : element.away_team.goals;
 
-                    let golsPais1 = element.home_team.goals == null ? 0 : element.home_team.goals;
-                    let golsPais2 = element.away_team.goals == null ? 0 : element.away_team.goals;
-
-                    let dataPartida = montaData(element.datetime);
+                let dataPartida = montaData(element.datetime);
 
 
-                    let placar = `x`
-                    if (element.status != 'future_scheduled') {
-                        placar = `
-                        <span class="badge badge-dark" style="font-size:15px; margin-left:10px; margin-right:10px">${golsPais1}</span> 
-                        x
-                        <span class="badge badge-dark" style="font-size:15px; margin-right:10px; margin-left:10px">${golsPais2}</span>
-                    `
-                    }
+                let placar = `x`
+                if (element.status != 'future_scheduled') {
+                    placar = `
+                    <span class="badge badge-dark" style="font-size:15px; margin-left:10px; margin-right:10px">${golsPais1}</span> 
+                    x
+                    <span class="badge badge-dark" style="font-size:15px; margin-right:10px; margin-left:10px">${golsPais2}</span>
+                `
+                }
 
-                    $("#container2").append(`
-            
-                    <div class="col-md-6 col-sm-12">
-                        <div class="card text-center ${status} mb-4">
-                            <div class="card-header">
-                                <img class="img-country" data-sigla="${country1}" src="./assets/img/flags/${bandeiraPais1}.svg" width="30px" style="margin-right: 15px"> 
-                                ${translateFlag[element.home_team.name].toUpperCase()}
-                                ${placar}
-                                ${translateFlag[element.away_team.name].toUpperCase()}
-                                <img class="img-country" data-sigla="${country2}" src="./assets/img/flags/${bandeiraPais2}.svg" width="30px" style="margin-left: 15px">
-                            </div>
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-md-6 col-sm-12">   
-                                            <ul class="info list-group list-group-flush">
+                $("#container2").append(`
+        
+                <div class="col-md-6 col-sm-12">
+                    <div class="card text-center ${status} mb-4">
+                        <div class="card-header">
+                            <img class="img-country" data-sigla="${country1}" src="./assets/img/flags/${bandeiraPais1}.svg" width="30px" style="margin-right: 15px"> 
+                            ${country1}
+                            ${placar}
+                            ${country2}
+                            <img class="img-country" data-sigla="${country2}" src="./assets/img/flags/${bandeiraPais2}.svg" width="30px" style="margin-left: 15px">
+                        </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-12">   
+                                        <ul class="info list-group list-group-flush">
                                             ${events}
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6 col-sm-12">   
-                                            <ul class="info list-group list-group-flush">
-                                                ${events2}
-                                            </ul>
-                                        </div>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12">   
+                                        <ul class="info list-group list-group-flush">
+                                            ${events2}
+                                        </ul>
                                     </div>
                                 </div>
-                        </div>
+                            </div>
                     </div>
-                `);
+                </div>
+            `);
 
-                }
             }
         });
     }
