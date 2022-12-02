@@ -1,4 +1,4 @@
-$(document).ready( function () {
+$(document).ready(function () {
 
     // LISTAGEM DE PARTIDAS
 
@@ -82,20 +82,20 @@ $(document).ready( function () {
     });
 
 
-    // pego o click na imagem do país
-    $("#container").on("click", ".img-country", function(){
-        
+    // pego o click na imagem do paï¿½s
+    $("#container").on("click", ".img-country", function () {
+
         // pego o atributo que armazenei no elemento <img>
         let sigla = $(this).data('sigla');
-        
-        // salvo o storage do js a sigla do país para usar na outra pagina
+
+        // salvo o storage do js a sigla do paï¿½s para usar na outra pagina
         localStorage.setItem('country_sigla', sigla);
-        
+
         // para pegar a url atual, uso o split e concateno com o caminho que quero
         let url = window.location.href.split('/partidas')
-        
+
         // monto a url e redireciono
-        window.location.href = url[0]+"/times.html";
+        window.location.href = url[0] + "/times.html";
     })
 
 });
