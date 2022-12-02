@@ -158,11 +158,11 @@ $(document).ready(function () {
                 <div class="col-md-6 col-sm-12">
                     <div class="card text-center ${status} mb-4">
                         <div class="card-header">
-                            <img class="img-country" data-sigla="${country1}" src="./assets/img/flags/${bandeiraPais1}.svg" width="30px" style="margin-right: 15px"> 
+                            <img class="img-country" data-sigla="${country1}" data-traduzido="${translateCountry[country1]}" data-bandeira="${bandeiraPais1}" src="./assets/img/flags/${bandeiraPais1}.svg" width="30px" style="margin-right: 15px"> 
                             ${country1}
                             ${placar}
                             ${country2}
-                            <img class="img-country" data-sigla="${country2}" src="./assets/img/flags/${bandeiraPais2}.svg" width="30px" style="margin-left: 15px">
+                            <img class="img-country" data-sigla="${country2}" data-traduzido="${translateCountry[country2]}" data-bandeira="${bandeiraPais2}" src="./assets/img/flags/${bandeiraPais2}.svg" width="30px" style="margin-left: 15px">
                         </div>
                             <div class="card-body">
                                 <div class="row">
@@ -208,21 +208,5 @@ $(document).ready(function () {
 
         return events
     }
-
-    // pego o click na imagem do pa�s
-    $("#container2").on("click", ".img-country", function () {
-
-        // pego o atributo que armazenei no elemento <img>
-        let sigla = $(this).data('sigla');
-
-        // salvo o storage do js a sigla do pa�s para usar na outra pagina
-        localStorage.setItem('country_sigla', sigla);
-
-        // para pegar a url atual, uso o split e concateno com o caminho que quero
-        let url = window.location.href.split('/index')
-
-        // monto a url e redireciono
-        window.location.href = url[0] + "/times.html";
-    })
 
 });

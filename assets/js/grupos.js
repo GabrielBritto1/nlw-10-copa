@@ -18,7 +18,7 @@ $(document).ready(function () {
 
                 times += ` 
                     <tr class="${class_tr}">
-                        <td class="text-left"><img class="img img-country" style="cursor:pointer;" data-sigla="${element2.country}" src="./assets/img/flags/${element2.name.toLowerCase()}.svg" alt="Bandeira do ${element2.name}" width="20px"> &nbsp; ${element2.country}</td>
+                        <td class="text-left"><img class="img img-country" style="cursor:pointer;" data-traduzido="${translateCountry[element2.country]}" data-bandeira="${element2.name.toLowerCase()}" data-sigla="${element2.country}" src="./assets/img/flags/${element2.name.toLowerCase()}.svg" alt="Bandeira do ${element2.name}" width="20px"> &nbsp; ${element2.country}</td>
                         <td>${element2.group_points}</td>
                         <td class="d-none">${element2.wins}</td>
                         <td class="d-none">${element2.draws}</td>
@@ -74,21 +74,5 @@ $(document).ready(function () {
         $('#table-6').DataTable({ searching: false, paging: false, info: false, order: [[1, 'desc'], [8, 'desc']] });
         $('#table-7').DataTable({ searching: false, paging: false, info: false, order: [[1, 'desc'], [8, 'desc']] });
     }, 500);
-
-    // pego o click na imagem do pa�s
-    $("#container").on("click", ".img-country", function () {
-
-        // pego o atributo que armazenei no elemento <img>
-        let sigla = $(this).data('sigla');
-
-        // salvo o storage do js a sigla do pa�s para usar na outra pagina
-        localStorage.setItem('country_sigla', sigla);
-
-        // para pegar a url atual, uso o split e concateno com o caminho que quero
-        let url = window.location.href.split('/grupos')
-
-        // monto a url e redireciono
-        window.location.href = url[0] + "/times.html";
-    })
 
 });
