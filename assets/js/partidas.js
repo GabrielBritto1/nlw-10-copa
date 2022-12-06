@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
     $("#container").append('<div class="col-md-12 mb-3"><button id="exibir-fase-grupos" class="btn btn-secondary btn-block">Exibir Fase de Grupos</button></div>')
+    $("#container").append('<div class="col-md-12 mb-3"><button id="exibir-oitavas" class="btn btn-secondary btn-block">Exibir Oitavas de final</button></div>')
 
     // LISTAGEM DE PARTIDAS
 
@@ -50,6 +51,7 @@ $(document).ready(function () {
             let estagios = {
                 'First stage':'Fase de grupos',
                 'Round of 16':'Oitavas de final',
+                'Quarter-final':'Quartas de final',
                 'Semi-final':'Semifinal',
                 'Play-off for third place':'Disputa do terceiro lugar',
                 'Final':'Final'
@@ -58,6 +60,7 @@ $(document).ready(function () {
             let estagios_class = {
                 'First stage':'fase-grupos',
                 'Round of 16':'oitavas-final',
+                'Quarter-final':'quartas-final',
                 'Semi-final':'semifinal',
                 'Play-off for third place':'terceiro-lugar',
                 'Final':'final'
@@ -65,7 +68,8 @@ $(document).ready(function () {
             
             let estagios_style = {
                 'First stage':'style="display:none"',
-                // 'Round of 16':'oitavas-final',
+                'Round of 16':'style="display:none"',
+                // 'Quarter-final':'style="display:none"',
                 // 'Semi-final':'semifinal',
                 // 'Play-off for third place':'terceiro-lugar',
                 // 'Final':'final'
@@ -135,6 +139,22 @@ $(document).ready(function () {
         }
 
         $(".fase-grupos").toggle()
+    })
+
+    // pego o click na imagem do pa�s
+    $("#container").on("click", "#exibir-oitavas", function () {
+
+        if ($(".oitavas-final").is(':visible')) {
+            $("#exibir-oitavas").html("Exibir Oitavas de Final")
+            $("#exibir-oitavas").removeClass("btn-success")
+            $("#exibir-oitavas").addClass("btn-secondary")
+        } else {
+            $("#exibir-oitavas").html("Esconder Oitavas de Final")
+            $("#exibir-oitavas").removeClass("btn-secondary")
+            $("#exibir-oitavas").addClass("btn-success")
+        }
+
+        $(".oitavas-final").toggle()
     })
 
     function resumoPais(data) {

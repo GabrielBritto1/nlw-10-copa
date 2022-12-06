@@ -77,9 +77,10 @@ $(document).ready(function () {
                 `
             }
 
-            let estagios = {
+            let estagios_common = {
                 'First stage':'Fase de grupos',
                 'Round of 16':'Oitavas de final',
+                'Quarter-final':'Quartas de Final',
                 'Semi-final':'Semifinal',
                 'Play-off for third place':'Disputa do terceiro lugar',
                 'Final':'Final'
@@ -101,7 +102,7 @@ $(document).ready(function () {
                             ${dataPartida}
                         </div>
                         <div>
-                            ${estagios[element.stage_name]}
+                            ${estagios_common[element.stage_name]}
                         </div>
 
                     </div>
